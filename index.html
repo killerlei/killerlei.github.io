@@ -5,7 +5,7 @@
     <style type="text/css">
        *{padding:0;margin:0}
         .header{position: fixed;
-            width:500px;
+            width:800px;
             overflow: hidden;
             margin:0 auto;
             left:0;
@@ -13,10 +13,16 @@
             background: blanchedalmond;
         }
         .header li{float:left;list-style: none;width: 25%;text-align: center}
-        .header li a{text-decoration: none}
+        .header li a{text-decoration: none;font-family:宋体;font-size: 25px;color:black}
+        .content{padding-top: 30px;overflow: hidden;}
+        .content .middle{float:left;width:100%;background: grey}
+        .content .left{float:left;width:300px;background: ghostwhite;margin-left: -100%;}
+        .content .right{float:left;width:200px;background: darkgray;margin-left: -200px}
+        .content>div{padding-bottom:1000px;margin-bottom: -1000px;}
+        .middle .middle-inner{margin:0 200px 0 300px}
     </style>
 </head>
-<body>
+<body style="background: whitesmoke">
 <div class="header">
     <ul class="nav">
         <li><a href="font-end.html">前端科学</a></li>
@@ -24,6 +30,43 @@
         <li><a href="">非常之道</a></li>
         <li><a href="">生活点滴</a></li>
     </ul>
+</div>
+<div class="content">
+    <div class="middle">
+       <div class="middle-inner">
+           middle <br>
+           middle <br>
+           middle <br>
+           middle <br>
+           middle <br>
+           middle <br>
+           middle <br>
+           middle <br>
+           middle <br>
+           middle <br>
+           middle <br>
+           middle <br>
+           middle <br>
+           middle <br>
+           middle <br>
+           middle <br>
+           middle <br>
+           middle <br>
+           middle <br>
+           middle <br>
+           middle <br>
+           middle <br>
+           middle <br>
+           middle <br>
+           middle <br>
+       </div>
+    </div>
+    <div class="left">
+         left
+    </div>
+    <div class="right">
+         right
+    </div>
 </div>
 </body>
 </html>
