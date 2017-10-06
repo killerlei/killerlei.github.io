@@ -6,25 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>hexo+github+AppVeyor实现不同电脑写博客 | 雨田</title>
+  <title>Tag: -跨域 -代理 | 雨田</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="hexo + github 部分 以前一直用的像博客园这样专业的博客网站,但是一直想有个个人站点,正好github提供这样的类似功能,并且发现hexo这样的好工具.hexo使用markdown写文章,并且支持github部署.这就很完美了. 如何使用,网上已有好多教程,不再赘言. 美中不足的是:换了电脑或者电脑坏了,源文件丢失,就得重新写,非常的麻烦. 网上也有很多解决方式,我比较喜欢在githu">
-<meta name="keywords" content="-hexo -AppVeyor -持续集成">
-<meta property="og:type" content="article">
-<meta property="og:title" content="hexo+github+AppVeyor实现不同电脑写博客">
-<meta property="og:url" content="http://yoursite.com/2017/04/06/hexo-github-AppVeyor实现不同电脑写博客/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="雨田">
+<meta property="og:url" content="http://yoursite.com/tags/跨域-代理/index.html">
 <meta property="og:site_name" content="雨田">
-<meta property="og:description" content="hexo + github 部分 以前一直用的像博客园这样专业的博客网站,但是一直想有个个人站点,正好github提供这样的类似功能,并且发现hexo这样的好工具.hexo使用markdown写文章,并且支持github部署.这就很完美了. 如何使用,网上已有好多教程,不再赘言. 美中不足的是:换了电脑或者电脑坏了,源文件丢失,就得重新写,非常的麻烦. 网上也有很多解决方式,我比较喜欢在githu">
-<meta property="og:image" content="http://oo0zdjapt.bkt.clouddn.com/hexo/imagesappveyor-p.png">
-<meta property="og:image" content="http://oo0zdjapt.bkt.clouddn.com/Appveyor-e.png">
-<meta property="og:image" content="http://oo0zdjapt.bkt.clouddn.com/hexo/images/appveyor-b1.png">
-<meta property="og:image" content="http://oo0zdjapt.bkt.clouddn.com/hexo/images/appveyor-b2.png">
-<meta property="og:image" content="http://oo0zdjapt.bkt.clouddn.com/hexo/images/git-io.png">
-<meta property="og:updated_time" content="2017-10-06T14:04:53.925Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo+github+AppVeyor实现不同电脑写博客">
-<meta name="twitter:description" content="hexo + github 部分 以前一直用的像博客园这样专业的博客网站,但是一直想有个个人站点,正好github提供这样的类似功能,并且发现hexo这样的好工具.hexo使用markdown写文章,并且支持github部署.这就很完美了. 如何使用,网上已有好多教程,不再赘言. 美中不足的是:换了电脑或者电脑坏了,源文件丢失,就得重新写,非常的麻烦. 网上也有很多解决方式,我比较喜欢在githu">
-<meta name="twitter:image" content="http://oo0zdjapt.bkt.clouddn.com/hexo/imagesappveyor-p.png">
+<meta name="twitter:title" content="雨田">
   
     <link rel="alternative" href="/atom.xml" title="雨田" type="application/atom+xml">
   
@@ -182,203 +171,60 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hexo-github-AppVeyor实现不同电脑写博客" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      hexo+github+AppVeyor实现不同电脑写博客
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/10/06/使用代理解决跨域限制/" class="archive-article-date">
+  	<time datetime="2017-10-06T21:00:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-06</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/10/06/使用代理解决跨域限制/">使用代理解决跨域限制</a>
     </h1>
   
 
-        
-        <a href="/2017/04/06/hexo-github-AppVeyor实现不同电脑写博客/" class="archive-article-date">
-  	<time datetime="2017-04-06T17:32:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="hexo-github-部分"><a href="#hexo-github-部分" class="headerlink" title="hexo + github 部分"></a>hexo + github 部分</h2><ul>
-<li>以前一直用的像<a href="http://www.cnblogs.com/" target="_blank" rel="external">博客园</a>这样专业的博客网站,但是一直想有个个人站点,正好github提供这样的类似功能,并且发现hexo这样的好工具.hexo使用markdown写文章,并且支持github部署.这就很完美了.</li>
-<li>如何使用,网上已有好多教程,不再赘言.</li>
-<li>美中不足的是:换了电脑或者电脑坏了,源文件丢失,就得重新写,非常的麻烦.</li>
-<li>网上也有很多解决方式,我比较喜欢在github备份源文件,并且使用AppVeyor实现自动部署,不用在本地产生文件,也不用即备份又要部署那么繁琐.</li>
-<li>我是学习这篇教程做的,<a href="https://formulahendry.github.io/2016/12/04/hexo-ci/" target="_blank" rel="external">Hexo的版本控制与持续集成</a>,以下也是我根据其做的实践.<a id="more"></a>
-</li>
-</ul>
-<h2 id="AppVeyor持续集成"><a href="#AppVeyor持续集成" class="headerlink" title="AppVeyor持续集成"></a>AppVeyor持续集成</h2><p>我是在今年被问到CI,才知道持续集成这个东东的.也没有有机会实践,所以只能跟着教程一步一步操作.</p>
-<ol>
-<li>新建两个github仓库,一个是 <a href="https://github.com/killerlei/killerlei.github.io" target="_blank" rel="external">killerlei.github.io.</a>(以我的为例) ,另一个是便是备份源文件的仓库 <a href="https://github.com/killerlei/hexo-github-source" target="_blank" rel="external">hexo-github-source</a>(以我的为例).</li>
-</ol>
-<ol>
-<li><p>注册<a href="https://www.appveyor.com/" target="_blank" rel="external">APPVeyor</a>,支持github登录,然后新建项目,直接选择github里面的源文件仓库<a href="https://github.com/killerlei/hexo-github-source" target="_blank" rel="external">hexo-github-source</a><br><img src="http://oo0zdjapt.bkt.clouddn.com/hexo/imagesappveyor-p.png" alt=""></p>
-</li>
-<li><p>在该项目的settings中设置Envirommemt<br><img src="http://oo0zdjapt.bkt.clouddn.com/Appveyor-e.png" alt=""></p>
-</li>
-<li><p>在源文件根目录中添加appveyor.yml配置文件,我的如下 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">clone_depth: 5</div><div class="line">environment:</div><div class="line">  access_token:</div><div class="line">    secure: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx(这里需要自己的)</div><div class="line">install:</div><div class="line">  - node --version</div><div class="line">  - npm --version</div><div class="line">  - npm install</div><div class="line">  - npm install hexo-cli -g</div><div class="line">build_script:</div><div class="line">  - hexo generate</div><div class="line">artifacts:</div><div class="line">  - path: public</div><div class="line">  on_success:</div><div class="line">  - git config --global credential.helper store</div><div class="line">  - ps: Add-Content &quot;$env:USERPROFILE\.git-credentials&quot; &quot;https://$($env:access_token):x-oauth-basic@github.com`n&quot;</div><div class="line">  - git config --global user.email &quot;%GIT_USER_EMAIL%&quot;</div><div class="line">  - git config --global user.name &quot;%GIT_USER_NAME%&quot;</div><div class="line">  - git clone --depth 5 -q --branch=%TARGET_BRANCH% %STATIC_SITE_REPO% %TEMP%\static-site</div><div class="line">  - cd %TEMP%\static-site</div><div class="line">  - del * /f /q</div><div class="line">  - for /d %%p IN (*) do rmdir &quot;%%p&quot; /s /q</div><div class="line">  - SETLOCAL EnableDelayedExpansion &amp; robocopy &quot;%APPVEYOR_BUILD_FOLDER%\public&quot; &quot;%TEMP%\static-site&quot; /e &amp; IF !ERRORLEVEL! EQU 1 (exit 0) ELSE (IF !ERRORLEVEL! EQU 3 (exit 0) ELSE (exit 1))</div><div class="line">  - git add -A</div><div class="line">  - if &quot;%APPVEYOR_REPO_BRANCH%&quot;==&quot;master&quot; if not defined APPVEYOR_PULL_REQUEST_NUMBER (git diff --quiet --exit-code --cached || git commit -m &quot;Update Static Site&quot; &amp;&amp; git push origin %TARGET_BRANCH% &amp;&amp; appveyor AddMessage &quot;Static Site Updated&quot;)</div></pre></td></tr></table></figure>
-</li>
-<li><p>第4步需要个人的secure,先到github新建 <a href="https://github.com/settings/tokens" target="_blank" rel="external">Personal access tokens</a>,然后到AppVeyor加密<a href="https://ci.appveyor.com/tools/encrypt" target="_blank" rel="external">AppVeyor加密</a>,然后写到第4步里</p>
-</li>
-<li><p>现在就可以在本地写文章了,比如 <br>新建一篇文章  </p>
-<blockquote>
-<p>hexo new “hexo使用总结”<br><br>hexo s   (在本地浏览器检查正常)<br><br>git push origin master (推送到源文件备份仓库)<br></p>
-</blockquote>
-<p>现在AppVeor就开始自动构建.<br><img src="http://oo0zdjapt.bkt.clouddn.com/hexo/images/appveyor-b1.png" alt=""><br><img src="http://oo0zdjapt.bkt.clouddn.com/hexo/images/appveyor-b2.png" alt=""> </p>
-</li>
-</ol>
-<p>成功后就会把生成的文件推送到<a href="https://github.com/killerlei/killerlei.github.io" target="_blank" rel="external">killerlei.github.io.</a>仓库</p>
-<p><img src="http://oo0zdjapt.bkt.clouddn.com/hexo/images/git-io.png" alt="">    </p>
-<p>就可以在<a href="https://killerlei.github.io./" target="_blank" rel="external">killerlei.github.io.</a>访问到新建的文章.</p>
-<h4 id="这样是不是很方便-换个电脑直接从源文件仓库clone下来-也不怕丢失"><a href="#这样是不是很方便-换个电脑直接从源文件仓库clone下来-也不怕丢失" class="headerlink" title="这样是不是很方便,换个电脑直接从源文件仓库clone下来,也不怕丢失."></a>这样是不是很方便,换个电脑直接从源文件仓库clone下来,也不怕丢失.</h4><p>ps:如果使用了hexo的非默认主题,可能会遇到这样的情况(比如我用的yilia主题):<br><br>向源文件仓库push时,会失败,我在网上查了以下,好像是主题文件含有.git文件,本来受git控制,所以会冲突.需要删除.git. 我弄了好久才糊里糊涂弄好.如需帮助,请看<a href="http://memory.blog.51cto.com/6054201/1217107" target="_blank" rel="external">.git解决1</a>和<a href="http://bbs.csdn.net/topics/390822726" target="_blank" rel="external">.git解决2</a></p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">-hexo -AppVeyor -持续集成</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">-跨域 -代理</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/04/06/hexo-github-AppVeyor实现不同电脑写博客/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2017/04/23/swiper-animal-冲突解决/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          swiper-animate 冲突解决
-        
-      </div>
-    </a>
   
   
-</nav>
-
-
-
-
-
-
-  
-  <div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="hexo-github-AppVeyor实现不同电脑写博客" data-title="hexo+github+AppVeyor实现不同电脑写博客" data-url="http://yoursite.com/2017/04/06/hexo-github-AppVeyor实现不同电脑写博客/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"true"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0]
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
+    </div></section>
   
 
-
+    
 
 
           </div>
@@ -403,9 +249,9 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",

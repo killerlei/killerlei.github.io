@@ -173,6 +173,103 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-使用代理解决跨域限制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/06/使用代理解决跨域限制/">使用代理解决跨域限制</a>
+    </h1>
+  
+
+        
+        <a href="/2017/10/06/使用代理解决跨域限制/" class="archive-article-date">
+  	<time datetime="2017-10-06T21:00:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><ol>
+<li>在跨域请求(经常是在用到别人的接口时)会遇到一些限制,对方会检查http请求携带的来源,比如检查host,referer等.</li>
+</ol>
+<h1 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h1><p>1.<br>    我们可以在本地起一个node服务,比如vue开发中的dev-server,使用其发http请求,通过修该请求信息,能够被对方接口通过返回数据,又因为同源策略是浏览器安全的范畴,所以在node上不用考虑跨域问题.</p>
+<p>2.<br>    项目中只需发一个ajax请求(因为向本地node服务发,故同源,不用考虑跨域).vue中使用axios作为ajax工具,其既可以在浏览器中使用,也可以在node中使用.</p>
+<pre><code>import axios from &apos;axios&apos;,
+let url = &apos;/api/getData&apos;,
+let data = {....},
+axios.get(url, {
+    params: data
+}).then((res) =&gt; {
+  ...........................
+  })
+</code></pre><p>3.<br>    在本地node服务中对请求’/api/getData’做代理,发请求到实际的接口</p>
+<pre><code>var axios = require(&apos;axios&apos;)
+var app = express()
+var apiRoutes = express.Router()
+
+apiRoutes.get(&apos;/getData&apos;, function (req, res) {
+    //实际接口
+  var url = &apos;https://c.y.qq.com/splcloud/fcgi-bin/fcg_get_diss_by_tag.fcg&apos;
+  //修改请求头信息
+  axios.get(url, {
+    headers: {
+      referer: &apos;https://c.y.qq.com/&apos;,
+      host: &apos;c.y.qq.com&apos;
+    },
+    params: req.query
+  }).then((response) =&gt; {
+    res.json(response.data)
+  }).catch((e) =&gt; {
+    console.log(e)
+  })
+})
+
+app.use(&apos;/api&apos;, apiRoutes)
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">-跨域 -代理</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/10/06/使用代理解决跨域限制/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-jsonp使用及promise封装" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -186,7 +283,7 @@ var _hmt = _hmt || [];
 
         
         <a href="/2017/10/05/jsonp使用及promise封装/" class="archive-article-date">
-  	<time datetime="2017-10-05T11:38:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-05</time>
+  	<time datetime="2017-10-05T03:38:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-05</time>
 </a>
         
       </header>
@@ -484,15 +581,19 @@ opts 中里面属性都有默认值,可以不用设置,但是注意param是前�
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">-hexo -AppVeyor -持续集成</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">-跨域 -jsonp -promise -异步同步</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">-hexo -AppVeyor -持续集成</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">-swiper-animate</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">-跨域 -代理</a>
               </li>
             
             <div class="clearfix"></div>
