@@ -230,94 +230,10 @@ const config = {
 };
 
 module.exports = config;
-</code></pre><p>这是一个简单的示例,还有其他配置选项,下面一个一个来介绍.(因为webpack2配置方面有点改变比如,loader-&gt;rules等等,可能下面的会有所冲突)</p>
-<h2 id="生成source-Maps-调试用"><a href="#生成source-Maps-调试用" class="headerlink" title="生成source Maps(调试用)"></a>生成source Maps(调试用)</h2><p>需要在配置中设置<br>devtool:’source-map’  (总共有七个选项,不同选项,打包速度也快,但也越不利于调试,调试也是各坑,有的选项打不上断点或者断点在下一行)</p>
-<h2 id="构建本地服务器"><a href="#构建本地服务器" class="headerlink" title="构建本地服务器"></a>构建本地服务器</h2><p>只从有了nodejs以后,前端就可以用node在本地起服务,而不用在配置java服务.<br>而且webpack也是基于nodejs的.</p>
-<p>1.npm 安装webpack-dev-server,这是一个基于express的webpack服务.</p>
-<p>2.在配置中</p>
-<pre><code>devServer:{
-    contentBase:&apos;./dist&apos;,
-    colors:true,
-    historyApiFallback:true,
-    inline:true
-}
-</code></pre><h2 id="loaders"><a href="#loaders" class="headerlink" title="loaders"></a>loaders</h2><p>   通过不同的loader,对各种文件进行处理</p>
-<ol>
-<li>安装</li>
-<li>在配置的modules属性下进行配置</li>
-</ol>
-<pre><code>module: {
-    rules: [
-      {
-        test: /\.(js|vue)$/,
-        loader: &apos;eslint-loader&apos;,
-        enforce: &apos;pre&apos;,
-        include: [resolve(&apos;src&apos;), resolve(&apos;test&apos;)],
-        options: {
-          formatter: require(&apos;eslint-friendly-formatter&apos;)
-        }
-      },
-      {
-        test: /\.vue$/,
-        loader: &apos;vue-loader&apos;,
-        options: vueLoaderConfig
-      },
-      {
-        test: /\.js$/,
-        loader: &apos;babel-loader&apos;,
-        include: [resolve(&apos;src&apos;), resolve(&apos;test&apos;)]
-      },
-      {
-        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-        loader: &apos;url-loader&apos;,
-        options: {
-          limit: 10000,
-          name: utils.assetsPath(&apos;img/[name].[hash:7].[ext]&apos;)
-        }
-      },
-      {
-        test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
-        loader: &apos;url-loader&apos;,
-        options: {
-          limit: 10000,
-          name: utils.assetsPath(&apos;media/[name].[hash:7].[ext]&apos;)
-        }
-      },
-      {
-        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-        loader: &apos;url-loader&apos;,
-        options: {
-          limit: 10000,
-          name: utils.assetsPath(&apos;fonts/[name].[hash:7].[ext]&apos;)
-        }
-      }
-    ]
-  }
-</code></pre><p>   必选属性:</p>
-<p>   test: 匹配要处理的文件扩展名(正则表达式)</p>
-<p>   loader而: 加载器</p>
-<p>   可选属性:</p>
-<p>   include: 手动添加必须处理的文件(文件夹)<br>   exclude: 手动屏蔽不需要处理的文件(文件夹)</p>
-<p>   query: 提供额外的处置选项,也可以直接写在loader里(webpack2应该是改成options,如上面的配置)</p>
-<pre><code>{test:/\.png|jpe?g|ico$/,
- loader:&apos;url-loader&apos;,
- exclude:&apos;/node-modles/&apos;,(举例而已,实际没有)
- query:{
-    limited:10000,
-    name: &apos;[name].[ext]?[hash]&apos;
- }
-}
-</code></pre><h2 id="bable"><a href="#bable" class="headerlink" title="bable"></a>bable</h2><p>将ES6转化为ES5的包,会有好几个包,核心功能在bable-core这个包中<br>用的最多的是解析ES6的babel-prsent-es2015和解析jsx的bable-present-react<br>配置如下:</p>
-<pre><code>loaders:[{
-  test:/\.js$/,
-  exclude:&apos;/node_modules&apos;,
-  laoder:&apos;babel&apos;,
-  query:{
-      presets:[&apos;es2015&apos;,&apos;react&apos;]
-  }
-}]
-</code></pre><p>bable还有非常的配置选项,实际一般把配置选项放到’bablerc’这个单独的文件中,webpack会自动调用.</p>
-
+</code></pre><p>这是一个简单的示例,还有其他配置选项,下面一个一个来介绍.(因为webpack2配置方面有点改变比如,loader-&gt;rules等等,可能下面的会有所冲突)<br>
+        
+          <a class="article-more-a" href="/2017/10/07/webpack总结-一/#more">more >></a>
+        
       
 
       
