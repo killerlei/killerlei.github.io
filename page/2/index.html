@@ -173,6 +173,88 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-jsonp使用及promise封装" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/05/jsonp使用及promise封装/">jsonp使用及promise封装</a>
+    </h1>
+  
+
+        
+        <a href="/2017/10/05/jsonp使用及promise封装/" class="archive-article-date">
+  	<time datetime="2017-10-05T11:38:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.<br><a href="https://github.com/webmodules/jsonp" target="_blank" rel="external">jsonp</a>简单封装了跨域请求方法jsonp,利用script标签不受同源策略的限制,达到ajax的效果.</p>
+<p>2.</p>
+<pre><code>    jsonp(url, opts, fn)
+
+    url (String) url to fetch
+    opts (Object), optional
+        param (String) name of the query string parameter to specify the callback (defaults to callback)
+        timeout (Number) how long after a timeout error is emitted. 0 to disable (defaults to 60000)
+        prefix (String) prefix for the global callback functions that handle jsonp responses (defaults to __jp)
+        name (String) name of the global callback functions that handle jsonp responses (defaults to prefix + incremented counter)
+    fn callback
+        The callback is called with err, data parameters.
+
+    If it times out, the err will be an Error object whose message is Timeout.
+
+    Returns a function that, when called, will cancel the in-progress jsonp request (fn won&apos;t be called).
+
+opts 中里面属性都有默认值,可以不用设置,但是注意param是前后端协议好的请求字段,默认值为callback,后端要根据这个字段拿到函数名,也就是另一个属性name,即jsonp原理中js中已经定义好的函数(jsonp内部会分配给全局对象对应属性,有name则是name值,如果没有则会根据prefix自动分配,并赋值fn).
+</code></pre>
+        
+          <a class="article-more-a" href="/2017/10/05/jsonp使用及promise封装/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">-跨域 -jsonp -promise -异步同步</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/10/05/jsonp使用及promise封装/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-swiper-animal-冲突解决" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -419,6 +501,10 @@ var _hmt = _hmt || [];
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">-webpack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
              
               <li class="article-tag-list-item">
