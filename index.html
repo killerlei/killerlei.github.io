@@ -173,6 +173,76 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-webpack总结二" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/07/webpack总结二/">webpack总结二</a>
+    </h1>
+  
+
+        
+        <a href="/2017/10/07/webpack总结二/" class="archive-article-date">
+  	<time datetime="2017-10-07T16:41:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="css"><a href="#css" class="headerlink" title="css"></a>css</h3><p>webpack提供了两个工具处理样式表 –&gt; css-loader 和 style-loader<br>css-loader 可以使用类似@import或url(…)的方法实现require的功能<br>style-loader将所有计算后的样式加入到页面中<br>两者缺一不可(多个加载器中间用!分割,从右向左执行,也可写成数组形式)</p>
+<pre><code>{test:/\.css$/,
+loader:&apos;style!css&apos;  
+//也可以写成
+loader:[&apos;style&apos;,&apos;css&apos;]
+}
+</code></pre>
+        
+          <a class="article-more-a" href="/2017/10/07/webpack总结二/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-webpack</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/10/07/webpack总结二/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-webpack总结-一" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -186,7 +256,7 @@ var _hmt = _hmt || [];
 
         
         <a href="/2017/10/07/webpack总结-一/" class="archive-article-date">
-  	<time datetime="2017-10-07T04:24:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-07</time>
+  	<time datetime="2017-10-07T12:24:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-07</time>
 </a>
         
       </header>
@@ -287,7 +357,7 @@ module.exports = config;
 
         
         <a href="/2017/10/06/使用代理解决跨域限制/" class="archive-article-date">
-  	<time datetime="2017-10-06T13:00:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-06</time>
+  	<time datetime="2017-10-06T21:00:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-06</time>
 </a>
         
       </header>
@@ -384,7 +454,7 @@ app.use(&apos;/api&apos;, apiRoutes)
 
         
         <a href="/2017/10/05/jsonp使用及promise封装/" class="archive-article-date">
-  	<time datetime="2017-10-05T03:38:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-05</time>
+  	<time datetime="2017-10-05T11:38:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-05</time>
 </a>
         
       </header>
@@ -436,75 +506,6 @@ opts 中里面属性都有默认值,可以不用设置,但是注意param是前�
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/10/05/jsonp使用及promise封装/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-swiper-animal-冲突解决" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/23/swiper-animal-冲突解决/">swiper-animate 冲突解决</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/23/swiper-animal-冲突解决/" class="archive-article-date">
-  	<time datetime="2017-04-23T11:39:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="冲突"><a href="#冲突" class="headerlink" title="冲突"></a>冲突</h1><ul>
-<li>swiper是个使用广泛，兼容性很高的js插件，可以独立使用，也可以跟jQuery配合使用。</li>
-<li>swiper-animate是swiper基础上开发的动画插件，可以实现非常酷炫的效果。</li>
-<li>这周在写一个页面，里面有轮播图、tab选项卡，用swiper开发非常方便，当然也用到了swiper-animate，<br>但是，两个swiper实例之间的 swiper-animate会互相影响，发生动画效果消失或错乱。</li>
-<li>在网上也没找到解决办法，最后只能用笨办法了。</li>
-</ul>
-        
-          <a class="article-more-a" href="/2017/04/23/swiper-animal-冲突解决/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">-swiper-animate</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/23/swiper-animal-冲突解决/">展开全文 >></a>
         </p>
       
 
@@ -617,7 +618,7 @@ opts 中里面属性都有默认值,可以不用设置,但是注意param是前�
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">-跨域 -代理</a>
+                <a href="javascript:void(0)" class="js-tag color2">-hexo -AppVeyor -持续集成</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -625,7 +626,7 @@ opts 中里面属性都有默认值,可以不用设置,但是注意param是前�
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">-hexo -AppVeyor -持续集成</a>
+                <a href="javascript:void(0)" class="js-tag color1">-swiper-animate</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -633,7 +634,7 @@ opts 中里面属性都有默认值,可以不用设置,但是注意param是前�
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-swiper-animate</a>
+                <a href="javascript:void(0)" class="js-tag color3">-跨域 -代理</a>
               </li>
             
             <div class="clearfix"></div>
