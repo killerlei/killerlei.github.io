@@ -173,6 +173,86 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-vue-cli编译打包后起node服务测试" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/08/vue-cli编译打包后起node服务测试/">vue-cli编译打包后起node服务测试</a>
+    </h1>
+  
+
+        
+        <a href="/2017/10/08/vue-cli编译打包后起node服务测试/" class="archive-article-date">
+  	<time datetime="2017-10-08T14:37:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>使用vue-cli开发项目中,一直使用dev-server.js这个本地服务,实现从内存中读取文件.</p>
+<p>项目完成后,要编译打包生成打包文件,提示不能通过打开file//方式访问,需要另外起服务访问.</p>
+<p>但是打包好后,不可能立即放到真实服务器中,还需要通过在本地测试一下,故另开一个node服务.</p>
+<h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><p>因为打包后生成的文件如script/link等路径都是绝对路径,当然找不到了.</p>
+<h3 id="解决1-修改配置"><a href="#解决1-修改配置" class="headerlink" title="解决1 修改配置"></a>解决1 修改配置</h3><p>如果弄明白vue-cli中webpack的配置,下面这个肯定明白,就是把绝对路径形式改成相对路径,但是不知道对放到真实服务器上有没影响.<br>
+        
+          <a class="article-more-a" href="/2017/10/08/vue-cli编译打包后起node服务测试/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">vue-cli</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/10/08/vue-cli编译打包后起node服务测试/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-vue-cli-2中webpack的配置分析二" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -193,7 +273,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>这片也是转载,<a href="http://www.cnblogs.com/ye-hcj/p/7077796.html" target="_blank" rel="external">叶家伟的博客</a>,这里有一系列的vue-cli中webpack分析文章,可以移步阅读.</p>
+        <p>这片也是转载,<a href="http://www.cnblogs.com/ye-hcj/p/7077796.html" target="_blank" rel="external">叶家伟的博客</a>,这里有一系列的vue-cli中webpack分析文章,可以移步阅读.<br>另外还找到另外一片博客<a href="http://blog.csdn.net/hongchh/article/details/55113751" target="_blank" rel="external">vue-cli的webpack模板项目配置文件分析</a><br>加上前面滴滴那篇介绍,对比读起来肯定会理解的快.<br>总之,网上有已有大量的学习资料,前人栽树,后人乘凉,感谢.</p>
 <h2 id="config-index-js"><a href="#config-index-js" class="headerlink" title="config/index.js"></a>config/index.js</h2><pre><code>// see http://vuejs-templates.github.io/webpack for documentation.
 // path是node.js的路径模块，用来处理路径统一的问题
 var path = require(&apos;path&apos;)
@@ -312,7 +392,7 @@ module.exports = {
 
         
         <a href="/2017/10/07/vue-cli-2-中webpack的配置-一/" class="archive-article-date">
-  	<time datetime="2017-10-07T14:39:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-07</time>
+  	<time datetime="2017-10-07T22:39:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-07</time>
 </a>
         
       </header>
@@ -402,7 +482,7 @@ module.exports = {
 
         
         <a href="/2017/10/07/webpack总结三/" class="archive-article-date">
-  	<time datetime="2017-10-07T13:05:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-07</time>
+  	<time datetime="2017-10-07T21:05:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-07</time>
 </a>
         
       </header>
@@ -437,76 +517,6 @@ module.exports = {
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/10/07/webpack总结三/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-webpack总结二" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/07/webpack总结二/">webpack总结二</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/07/webpack总结二/" class="archive-article-date">
-  	<time datetime="2017-10-07T08:41:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="css"><a href="#css" class="headerlink" title="css"></a>css</h3><p>webpack提供了两个工具处理样式表 –&gt; css-loader 和 style-loader<br>css-loader 可以使用类似@import或url(…)的方法实现require的功能<br>style-loader将所有计算后的样式加入到页面中<br>两者缺一不可(多个加载器中间用!分割,从右向左执行,也可写成数组形式)</p>
-<pre><code>{test:/\.css$/,
-loader:&apos;style!css&apos;  
-//也可以写成
-loader:[&apos;style&apos;,&apos;css&apos;]
-}
-</code></pre>
-        
-          <a class="article-more-a" href="/2017/10/07/webpack总结二/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-webpack</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/07/webpack总结二/">展开全文 >></a>
         </p>
       
 
@@ -619,6 +629,14 @@ loader:[&apos;style&apos;,&apos;css&apos;]
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">-跨域 -jsonp -promise -异步同步</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">-swiper-animate</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">-hexo -AppVeyor -持续集成</a>
               </li>
              
@@ -627,11 +645,15 @@ loader:[&apos;style&apos;,&apos;css&apos;]
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
+                <a href="javascript:void(0)" class="js-tag color5">node</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-跨域 -jsonp -promise -异步同步</a>
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -640,10 +662,6 @@ loader:[&apos;style&apos;,&apos;css&apos;]
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">-webpack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-swiper-animate</a>
               </li>
              
               <li class="article-tag-list-item">

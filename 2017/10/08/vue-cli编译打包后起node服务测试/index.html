@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017 | 雨田</title>
+  <title>vue-cli编译打包后起node服务测试 | 雨田</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="雨田">
-<meta property="og:url" content="http://yoursite.com/archives/2017/index.html">
+  <meta name="description" content="使用vue-cli开发项目中,一直使用dev-server.js这个本地服务,实现从内存中读取文件. 项目完成后,要编译打包生成打包文件,提示不能通过打开file//方式访问,需要另外起服务访问. 但是打包好后,不可能立即放到真实服务器中,还需要通过在本地测试一下,故另开一个node服务. 原因因为打包后生成的文件如script/link等路径都是绝对路径,当然找不到了. 解决1 修改配置如果弄明">
+<meta name="keywords" content="vue-cli,node,vue,webpack">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue-cli编译打包后起node服务测试">
+<meta property="og:url" content="http://yoursite.com/2017/10/08/vue-cli编译打包后起node服务测试/index.html">
 <meta property="og:site_name" content="雨田">
+<meta property="og:description" content="使用vue-cli开发项目中,一直使用dev-server.js这个本地服务,实现从内存中读取文件. 项目完成后,要编译打包生成打包文件,提示不能通过打开file//方式访问,需要另外起服务访问. 但是打包好后,不可能立即放到真实服务器中,还需要通过在本地测试一下,故另开一个node服务. 原因因为打包后生成的文件如script/link等路径都是绝对路径,当然找不到了. 解决1 修改配置如果弄明">
+<meta property="og:updated_time" content="2017-10-08T07:18:26.172Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="雨田">
+<meta name="twitter:title" content="vue-cli编译打包后起node服务测试">
+<meta name="twitter:description" content="使用vue-cli开发项目中,一直使用dev-server.js这个本地服务,实现从内存中读取文件. 项目完成后,要编译打包生成打包文件,提示不能通过打开file//方式访问,需要另外起服务访问. 但是打包好后,不可能立即放到真实服务器中,还需要通过在本地测试一下,故另开一个node服务. 原因因为打包后生成的文件如script/link等路径都是绝对路径,当然找不到了. 解决1 修改配置如果弄明">
   
     <link rel="alternative" href="/atom.xml" title="雨田" type="application/atom+xml">
   
@@ -171,36 +176,101 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-vue-cli编译打包后起node服务测试" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/08/vue-cli编译打包后起node服务测试/" class="archive-article-date">
-  	<time datetime="2017-10-08T14:37:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-08</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/08/vue-cli编译打包后起node服务测试/">vue-cli编译打包后起node服务测试</a>
+    <h1 class="article-title" itemprop="name">
+      vue-cli编译打包后起node服务测试
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/10/08/vue-cli编译打包后起node服务测试/" class="archive-article-date">
+  	<time datetime="2017-10-08T14:37:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>使用vue-cli开发项目中,一直使用dev-server.js这个本地服务,实现从内存中读取文件.</p>
+<p>项目完成后,要编译打包生成打包文件,提示不能通过打开file//方式访问,需要另外起服务访问.</p>
+<p>但是打包好后,不可能立即放到真实服务器中,还需要通过在本地测试一下,故另开一个node服务.</p>
+<h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><p>因为打包后生成的文件如script/link等路径都是绝对路径,当然找不到了.</p>
+<h3 id="解决1-修改配置"><a href="#解决1-修改配置" class="headerlink" title="解决1 修改配置"></a>解决1 修改配置</h3><p>如果弄明白vue-cli中webpack的配置,下面这个肯定明白,就是把绝对路径形式改成相对路径,但是不知道对放到真实服务器上有没影响.<br><a id="more"></a>        </p>
+<pre><code>这里有一个万能解决办法：
+    1. 将config/index.js 里面的 assetsPublicPath:&apos;/&apos; 改为assetsPublicPath:&apos;./&apos;  
+    2. build/util.js里面的
+    if (options.extract) {
+              return ExtractTextPlugin.extract({
+                            use: loaders,
+                            fallback: &apos;vue-style-loader&apos;,
+                            publicPath:&apos;/&apos;
+    })
+    将其中的publicPath改为：publicPath：&apos;../../&apos;就可以了。这样打包出来的路径就是正确的了。
+
+    第一个是为了改变js中引入图片的路径，改为./ 就是指在当前路径，这个.代表的路径就是assetsRoot+assetsSubDictionary，我这里定位到dist/static/ ，加上图片前缀img，就可以找到了。
+    第二种是为了改变vue文件中使用style样式里面例如background:url(&apos;xxx&apos;)，这样的路径，因为style最终变成css文件在dist/static/css里面，我们的图片放在dist/static/img中，那么加上../../变成dist目录下，默认的目录前缀是static，img是图片默认前缀，这样就可以定位到图片。
+</code></pre><h3 id="解决2-起一个node服务-并定位静态资源入口"><a href="#解决2-起一个node服务-并定位静态资源入口" class="headerlink" title="解决2 起一个node服务,并定位静态资源入口"></a>解决2 起一个node服务,并定位静态资源入口</h3><p>1.新建build/prod-server.js</p>
+<pre><code>var express = require(&apos;express&apos;)
+
+var app = express()
+var opn = require(&apos;opn&apos;)
+var path = require(&apos;path&apos;)
+
+var distPath = path.join(__dirname,&quot;../dist&quot;);
+//静态资源目录入口
+app.use(express.static(distPath));
+
+module.exports = app.listen(8081, function (err) {
+    if (err) {
+        console.log(err)
+        return
+    }
+    var uri = &apos;http://localhost:&apos; + 8081+&quot;/&quot;
+    console.log(&apos;Listening at &apos; + uri + &apos;\n&apos;)
+    opn(uri)
+})
+</code></pre><p>直接在项目目录命令行运行 node  prod-server.js  就可以访问了</p>
+<p>2 也可以在package.json中设置</p>
+<pre><code>&quot;scripts&quot;: {
+    &quot;dev&quot;: &quot;node build/dev-server.js&quot;,
+    &quot;build&quot;: &quot;node build/build.js&quot;,
+    &quot;local-server&quot;: &quot;node build/prod-server.js&quot;
+  },
+</code></pre><p>这样也可以直接  npm run local-server             </p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -224,141 +294,106 @@ var _hmt = _hmt || [];
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/10/08/vue-cli编译打包后起node服务测试/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/08/vue-cli-2中webpack的配置分析二/" class="archive-article-date">
-  	<time datetime="2017-10-08T10:44:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-08</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/08/vue-cli-2中webpack的配置分析二/">vue-cli-2中webpack的配置分析二</a>
-    </h1>
+  
+    <a href="/2017/10/08/vue-cli-2中webpack的配置分析二/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vue-cli-2中webpack的配置分析二</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="vue-cli编译打包后起node服务测试" data-title="vue-cli编译打包后起node服务测试" data-url="http://yoursite.com/2017/10/08/vue-cli编译打包后起node服务测试/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">vue-cli</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/07/vue-cli-2-中webpack的配置-一/" class="archive-article-date">
-  	<time datetime="2017-10-07T22:39:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/07/vue-cli-2-中webpack的配置-一/">vue-cli(#2)中webpack的配置(一)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">-webpack -vue-cli -vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/07/webpack总结三/" class="archive-article-date">
-  	<time datetime="2017-10-07T21:05:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/07/webpack总结三/">webpack总结三</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2017/page/2/">2</a><a class="page-number" href="/archives/2017/page/3/">3</a><a class="extend next" rel="next" href="/archives/2017/page/2/">Next &raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -383,8 +418,8 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
