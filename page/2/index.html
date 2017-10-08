@@ -173,6 +173,107 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-webpack总结-一" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/07/webpack总结-一/">webpack总结(一)</a>
+    </h1>
+  
+
+        
+        <a href="/2017/10/07/webpack总结-一/" class="archive-article-date">
+  	<time datetime="2017-10-07T04:24:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>作为一个前端开发者,现在已经不可避免的要和webpack打交道了,尤其使用vuejs以后,项目上不可避免要使用集成webpack的vue-cli.</p>
+<p>vue-cli基本上已经配置好了相关的webpack配置,基本上就可以开发了,不用开发人员再配置webpack,省时省力.</p>
+<p>但是webpack还是要弄清除基本的配置,尤其在面试的时候不可避免被问到,我在网上看到好多讲解的文章,受益匪浅,但是总是看时明白,过两天就忘记了,望而复始,所以想总结一下,以便能有个地方可以随时查阅,下面会引用别人的文章,以及自己的理解,肯定会有错误之处,请多对比.</p>
+<h1 id="webpack特点"><a href="#webpack特点" class="headerlink" title="webpack特点"></a>webpack特点</h1><p>是一个模块打包工具,不同于gulp,gulp只是一个构建工具,只执行相应的任务,比如说压缩/合并/检查/自动刷新等等,替代了人工操作,提高了开发人员的工作效率而已,不会对项目结构有所影响.</p>
+<p>webpack会把js/css/image/html等文件都视作模块,根据模块依赖关系进行静态分析,然后将这些模块按照指定的规则生成对应的静态资源.不仅仅可以执行压缩/合并等任务,还会深度参与项目结构.而且可以根据需求生成多个打包js,可以异步加载,实现按需加载.</p>
+<p>两个特点:</p>
+<ol>
+<li><p>一切皆模块</p>
+</li>
+<li><p>按需加载</p>
+</li>
+</ol>
+<h1 id="webpack基本配置"><a href="#webpack基本配置" class="headerlink" title="webpack基本配置"></a>webpack基本配置</h1><p>可以子命令行执行  webpack ………来打包</p>
+<p>一般专门配置webpack.config.js来方便的只在命令行执行webpack来打包.</p>
+<p>实际开发中一般又分成webpack.dev.config.js和webpack.build.config.js,还可能有webpack.test.config.js.具体可以参考vue-cli,后面在具体讲解.</p>
+<pre><code>const HtmlWebpackPlugin = require(&apos;html-webpack-plugin&apos;); //installed via npm
+const webpack = require(&apos;webpack&apos;); //to access built-in plugins
+const path = require(&apos;path&apos;);
+
+const config = {
+  entry: &apos;./path/to/my/entry/file.js&apos;,
+  output: {
+    path: path.resolve(__dirname, &apos;dist&apos;),
+    filename: &apos;my-first-webpack.bundle.js&apos;
+  },
+  module: {
+    rules: [
+      {test: /\.(js|jsx)$/, loader: &apos;babel-loader&apos;}
+    ]
+  },
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin(),
+    new HtmlWebpackPlugin({template: &apos;./src/index.html&apos;})
+  ]
+};
+
+module.exports = config;
+</code></pre><p>这是一个简单的示例,还有其他配置选项,下面一个一个来介绍.(因为webpack2配置方面有点改变比如,loader-&gt;rules等等,可能下面的会有所冲突)<br>
+        
+          <a class="article-more-a" href="/2017/10/07/webpack总结-一/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-webpack</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/10/07/webpack总结-一/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-使用代理解决跨域限制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -421,78 +522,9 @@ opts 中里面属性都有默认值,可以不用设置,但是注意param是前�
 
 
   
-    <article id="post-hexo-github-AppVeyor实现不同电脑写博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/06/hexo-github-AppVeyor实现不同电脑写博客/">hexo+github+AppVeyor实现不同电脑写博客</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/06/hexo-github-AppVeyor实现不同电脑写博客/" class="archive-article-date">
-  	<time datetime="2017-04-06T17:32:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="hexo-github-部分"><a href="#hexo-github-部分" class="headerlink" title="hexo + github 部分"></a>hexo + github 部分</h2><ul>
-<li>以前一直用的像<a href="http://www.cnblogs.com/" target="_blank" rel="external">博客园</a>这样专业的博客网站,但是一直想有个个人站点,正好github提供这样的类似功能,并且发现hexo这样的好工具.hexo使用markdown写文章,并且支持github部署.这就很完美了.</li>
-<li>如何使用,网上已有好多教程,不再赘言.</li>
-<li>美中不足的是:换了电脑或者电脑坏了,源文件丢失,就得重新写,非常的麻烦.</li>
-<li>网上也有很多解决方式,我比较喜欢在github备份源文件,并且使用AppVeyor实现自动部署,不用在本地产生文件,也不用即备份又要部署那么繁琐.</li>
-<li>我是学习这篇教程做的,<a href="https://formulahendry.github.io/2016/12/04/hexo-ci/" target="_blank" rel="external">Hexo的版本控制与持续集成</a>,以下也是我根据其做的实践.
-        
-          <a class="article-more-a" href="/2017/04/06/hexo-github-AppVeyor实现不同电脑写博客/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">-hexo -AppVeyor -持续集成</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/06/hexo-github-AppVeyor实现不同电脑写博客/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 
@@ -585,7 +617,15 @@ opts 中里面属性都有默认值,可以不用设置,但是注意param是前�
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">-跨域 -代理</a>
+                <a href="javascript:void(0)" class="js-tag color2">-hexo -AppVeyor -持续集成</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vue-cli</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -593,7 +633,7 @@ opts 中里面属性都有默认值,可以不用设置,但是注意param是前�
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">-hexo -AppVeyor -持续集成</a>
+                <a href="javascript:void(0)" class="js-tag color3">-webpack -vue-cli -vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -605,11 +645,7 @@ opts 中里面属性都有默认值,可以不用设置,但是注意param是前�
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">-webpack -vue-cli -vue</a>
+                <a href="javascript:void(0)" class="js-tag color3">-跨域 -代理</a>
               </li>
             
             <div class="clearfix"></div>
