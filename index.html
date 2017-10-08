@@ -173,6 +173,91 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-vue-cli中process-env-NODE-ENV" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/08/vue-cli中process-env-NODE-ENV/">vue-cli中process.env.NODE_ENV</a>
+    </h1>
+  
+
+        
+        <a href="/2017/10/08/vue-cli中process-env-NODE-ENV/" class="archive-article-date">
+  	<time datetime="2017-10-08T17:25:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>看前面vue-cli讲解的文章,对process.env.NODE_ENV,一直不理解是怎么设置的,怎么就变成production或者development</p>
+<pre><code>// webpack.base.config.js
+output: {
+    path: config.build.assetsRoot,
+    filename: &apos;[name].js&apos;,
+    publicPath: process.env.NODE_ENV === &apos;production&apos;
+      ? config.build.assetsPublicPath
+      : config.dev.assetsPublicPath
+  },
+</code></pre><p>通过看了不同的文章,大概有所了解.</p>
+<p>请参考<a href="http://cnodejs.org/topic/57a409657a922d6f358cd22d" target="_blank" rel="external">process.env</a></p>
+<p><a href="http://blog.404mzk.com/%E5%8C%BA%E5%88%86%E6%B5%8B%E8%AF%95%E5%92%8C%E6%AD%A3%E5%BC%8F%E7%8E%AF%E5%A2%83.html" target="_blank" rel="external">改变运行脚本的环境变量</a></p>
+<p><a href="http://array_huang.coding.me/webpack-book/chapter2/webpack-dev-production-environment.html" target="_blank" rel="external">业务代码如何判断生产/开发环境</a>        </p>
+<p><a href="http://blog.csdn.net/sinat_17775997/article/details/70140322" target="_blank" rel="external">DefinePlugin中的淫技巧</a></p>
+        
+          <a class="article-more-a" href="/2017/10/08/vue-cli中process-env-NODE-ENV/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">vue-cli</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">nodejs</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/10/08/vue-cli中process-env-NODE-ENV/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-vue-cli编译打包后起node服务测试" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -469,71 +554,6 @@ module.exports = {
 
 
   
-    <article id="post-webpack总结三" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/07/webpack总结三/">webpack总结三</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/07/webpack总结三/" class="archive-article-date">
-  	<time datetime="2017-10-07T21:05:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><p>webpack有很多内置插件,也有第三方插件,用来拓展webpack相关功能<br>如果是第三方插件,需要先安装</p>
-<h3 id="HtmlWebpackPlugin"><a href="#HtmlWebpackPlugin" class="headerlink" title="HtmlWebpackPlugin"></a>HtmlWebpackPlugin</h3><p>自动生成html插件,自动在dist目录下自动生成一个index.html<br>
-        
-          <a class="article-more-a" href="/2017/10/07/webpack总结三/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/07/webpack总结三/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -629,15 +649,23 @@ module.exports = {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-跨域 -jsonp -promise -异步同步</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">-swiper-animate</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">-webpack -vue-cli -vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">-跨域 -jsonp -promise -异步同步</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">-hexo -AppVeyor -持续集成</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">-webpack</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -657,11 +685,7 @@ module.exports = {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">-webpack -vue-cli -vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">-webpack</a>
+                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
               </li>
              
               <li class="article-tag-list-item">
