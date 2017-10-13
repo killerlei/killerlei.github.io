@@ -44,12 +44,12 @@ var _hmt = _hmt || [];
 </head>
 
 <body>
-  <div id="container" q-class="show:isCtnShow">z
+  <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
-    <div class="left-col" q-class="show:isShow">
+    <div class="left-col" q-class="show:isShow" style="background:#C3BED4;">
       
-<div class="overlay" style="background: #4d4d4d"></div>
-<div class="intrude-less">
+<div class="overlay" style="background: #495A80"></div>
+<div class="intrude-less" >
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
 			<img src="http://tvax2.sinaimg.cn/crop.29.27.115.115.180/006IZY6Tly8fecza95o1mj305s0483yd.jpg" class="js-avatar">
@@ -65,8 +65,6 @@ var _hmt = _hmt || [];
 				<li><a href="/">主页</a></li>
 	        
 				<li><a href="/categories/front">前端开发</a></li>
-	        
-				<li><a href="/categories/work">工作日志</a></li>
 	        
 				<li><a href="/categories/life">点滴生活</a></li>
 	        
@@ -94,20 +92,18 @@ var _hmt = _hmt || [];
 		        
 					<a class="weibo" target="_blank" href="http://weibo.com/6161724851/profile?topnav=1&wvr=6&is_all=1" title="weibo"><i class="icon-weibo"></i></a>
 		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-		        
 					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
 			</div>
 		</nav>
-	</header>		
+	</header>
 </div>
 
     </div>
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
 <nav id="mobile-nav">
-  	<div class="overlay js-overlay" style="background: #4d4d4d"></div>
+  	<div class="overlay js-overlay" style="background: #495A80"></div>
 	<div class="btnctn js-mobile-btnctn">
   		<div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div>
 	</div>
@@ -128,8 +124,6 @@ var _hmt = _hmt || [];
 			
 				
 			
-				
-			
 			
 			
 			<nav class="header-nav">
@@ -138,8 +132,6 @@ var _hmt = _hmt || [];
 						<a class="github" target="_blank" href="https://github.com/killerlei" title="github"><i class="icon-github"></i></a>
 			        
 						<a class="weibo" target="_blank" href="http://weibo.com/6161724851/profile?topnav=1&wvr=6&is_all=1" title="weibo"><i class="icon-weibo"></i></a>
-			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
 			        
 						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
@@ -150,13 +142,11 @@ var _hmt = _hmt || [];
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 25%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 25%"><a href="/categories/front">前端开发</a></li>
+					<li style="width: 33.333333333333336%"><a href="/categories/front">前端开发</a></li>
 		        
-					<li style="width: 25%"><a href="/categories/work">工作日志</a></li>
-		        
-					<li style="width: 25%"><a href="/categories/life">点滴生活</a></li>
+					<li style="width: 33.333333333333336%"><a href="/categories/life">点滴生活</a></li>
 		        
 				</ul>
 			</nav>
@@ -168,15 +158,15 @@ var _hmt = _hmt || [];
       <div id="wrapper" class="body-wrap">
         <div class="menu-l">
           <div class="canvas-wrap">
-            <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
+            <canvas data-colors="#eaeaea" data-sectionHeight="50" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
-          <div id="js-content" class="content-ll">
+          <div id="js-content" class="content-ll" style="background:#F8F8FF;">
             
   
     <article id="post-vue-cli中process-env-NODE-ENV" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
+      <header class="article-header" style="background: #B0C4DE">
         
   
     <h1 itemprop="name">
@@ -191,7 +181,7 @@ var _hmt = _hmt || [];
         
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+    <div class="article-entry" itemprop="articleBody" style="background: #F8F8FF;">
       
         <p>看前面vue-cli讲解的文章,对process.env.NODE_ENV,一直不理解是怎么设置的,怎么就变成production或者development</p>
 <pre><code>// webpack.base.config.js
@@ -208,13 +198,11 @@ output: {
 <p><a href="http://array_huang.coding.me/webpack-book/chapter2/webpack-dev-production-environment.html" target="_blank" rel="external">业务代码如何判断生产/开发环境</a>        </p>
 <p><a href="http://blog.csdn.net/sinat_17775997/article/details/70140322" target="_blank" rel="external">DefinePlugin中的淫技巧</a></p>
         
-          <a class="article-more-a" href="/2017/10/08/vue-cli中process-env-NODE-ENV/#more">more >></a>
-        
       
 
       
     </div>
-    <div class="article-info article-info-index">
+    <div class="article-info article-info-index" style="background: #778899;margin: 0 auto;">
       
       
 	<div class="article-tag tagcloud">
@@ -264,7 +252,7 @@ output: {
     <article id="post-vue-cli编译打包后起node服务测试" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
+      <header class="article-header" style="background: #B0C4DE">
         
   
     <h1 itemprop="name">
@@ -279,7 +267,7 @@ output: {
         
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+    <div class="article-entry" itemprop="articleBody" style="background: #F8F8FF;">
       
         <p>使用vue-cli开发项目中,一直使用dev-server.js这个本地服务,实现从内存中读取文件.</p>
 <p>项目完成后,要编译打包生成打包文件,提示不能通过打开file//方式访问,需要另外起服务访问.</p>
@@ -287,13 +275,11 @@ output: {
 <h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><p>因为打包后生成的文件如script/link等路径都是绝对路径,当然找不到了.</p>
 <h3 id="解决1-修改配置"><a href="#解决1-修改配置" class="headerlink" title="解决1 修改配置"></a>解决1 修改配置</h3><p>如果弄明白vue-cli中webpack的配置,下面这个肯定明白,就是把绝对路径形式改成相对路径,但是不知道对放到真实服务器上有没影响.<br>
         
-          <a class="article-more-a" href="/2017/10/08/vue-cli编译打包后起node服务测试/#more">more >></a>
-        
       
 
       
     </div>
-    <div class="article-info article-info-index">
+    <div class="article-info article-info-index" style="background: #778899;margin: 0 auto;">
       
       
 	<div class="article-tag tagcloud">
@@ -347,7 +333,7 @@ output: {
     <article id="post-vue-cli-2中webpack的配置分析二" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
+      <header class="article-header" style="background: #B0C4DE">
         
   
     <h1 itemprop="name">
@@ -362,7 +348,7 @@ output: {
         
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+    <div class="article-entry" itemprop="articleBody" style="background: #F8F8FF;">
       
         <p>这片也是转载,<a href="http://www.cnblogs.com/ye-hcj/p/7077796.html" target="_blank" rel="external">叶家伟的博客</a>,这里有一系列的vue-cli中webpack分析文章,可以移步阅读.<br>另外还找到另外一片博客<a href="http://blog.csdn.net/hongchh/article/details/55113751" target="_blank" rel="external">vue-cli的webpack模板项目配置文件分析</a><br>加上前面滴滴那篇介绍,对比读起来肯定会理解的快.<br>总之,网上有已有大量的学习资料,前人栽树,后人乘凉,感谢.</p>
 <h2 id="config-index-js"><a href="#config-index-js" class="headerlink" title="config/index.js"></a>config/index.js</h2><pre><code>// see http://vuejs-templates.github.io/webpack for documentation.
@@ -424,13 +410,11 @@ module.exports = {
 }
 </code></pre>
         
-          <a class="article-more-a" href="/2017/10/08/vue-cli-2中webpack的配置分析二/#more">more >></a>
-        
       
 
       
     </div>
-    <div class="article-info article-info-index">
+    <div class="article-info article-info-index" style="background: #778899;margin: 0 auto;">
       
       
 	<div class="article-tag tagcloud">
@@ -476,7 +460,7 @@ module.exports = {
     <article id="post-vue-cli-2-中webpack的配置-一" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
+      <header class="article-header" style="background: #B0C4DE">
         
   
     <h1 itemprop="name">
@@ -491,7 +475,7 @@ module.exports = {
         
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+    <div class="article-entry" itemprop="articleBody" style="background: #F8F8FF;">
       
         <p>这篇基本上转载自滴滴前端团队的一片文章,感谢这样优秀的前端团队.</p>
 <h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><pre><code>.
@@ -521,13 +505,11 @@ module.exports = {
 └── static
 </code></pre>
         
-          <a class="article-more-a" href="/2017/10/07/vue-cli-2-中webpack的配置-一/#more">more >></a>
-        
       
 
       
     </div>
-    <div class="article-info article-info-index">
+    <div class="article-info article-info-index" style="background: #778899;margin: 0 auto;">
       
       
 	<div class="article-tag tagcloud">
@@ -645,7 +627,7 @@ module.exports = {
         
     </ul>
   </div>
-  <div class="tools-wrap">
+  <div class="tools-wrap" style="background: #708090;">
     
     	<section class="tools-section tools-section-all" q-show="innerArchive">
         <div class="search-wrap">
@@ -659,47 +641,47 @@ module.exports = {
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
-             
+            
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">-swiper-animate</a>
               </li>
-             
+            
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">vue-cli</a>
               </li>
-             
+            
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
-             
+            
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">-hexo -AppVeyor -持续集成</a>
               </li>
-             
+            
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">-跨域 -jsonp -promise -异步同步</a>
               </li>
-             
+            
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">-webpack -vue-cli -vue</a>
               </li>
-             
+            
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
               </li>
-             
+            
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">-webpack</a>
               </li>
-             
+            
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">node</a>
               </li>
-             
+            
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
-             
+            
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">-跨域 -代理</a>
               </li>
@@ -753,27 +735,7 @@ module.exports = {
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
+              <a href="http://www.google.com" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>google</a>
             </li>
           
         </ul>
@@ -789,8 +751,9 @@ module.exports = {
     	</section>
     
   </div>
-  
+
 </div>
+
     <!-- Root element of PhotoSwipe. Must have class pswp. -->
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
