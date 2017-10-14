@@ -8,12 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>雨田</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="一点点想法,关于工作,关于开发,关于生活,关于自己,关于未来.人生迷茫,道长且艰,奈何伶仃,直至终点.">
+<meta property="og:type" content="website">
 <meta property="og:title" content="雨田">
 <meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="雨田">
+<meta property="og:description" content="一点点想法,关于工作,关于开发,关于生活,关于自己,关于未来.人生迷茫,道长且艰,奈何伶仃,直至终点.">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="雨田">
+<meta name="twitter:description" content="一点点想法,关于工作,关于开发,关于生活,关于自己,关于未来.人生迷茫,道长且艰,奈何伶仃,直至终点.">
   
     <link rel="alternative" href="/atom.xml" title="雨田" type="application/atom+xml">
   
@@ -205,6 +208,17 @@ var _hmt = _hmt || [];
 	</div>
 
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/front/" class="article-tag-list-link color1">front</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
@@ -269,13 +283,24 @@ loader:[&apos;style&apos;,&apos;css&apos;]
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-webpack</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
         		</li>
       		
 		</ul>
 	</div>
 
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/front/" class="article-tag-list-link color1">front</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
@@ -371,13 +396,24 @@ module.exports = config;
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-webpack</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
         		</li>
       		
 		</ul>
 	</div>
 
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/front/" class="article-tag-list-link color1">front</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
@@ -422,11 +458,9 @@ module.exports = config;
     
     <div class="article-entry" itemprop="articleBody" style="background: #F8F8FF;">
       
-        <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><ol>
-<li>在跨域请求(经常是在用到别人的接口时)会遇到一些限制,对方会检查http请求携带的来源,比如检查host,referer等.</li>
-</ol>
-<h1 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h1><p>1.<br>    我们可以在本地起一个node服务,比如vue开发中的dev-server,使用其发http请求,通过修该请求信息,能够被对方接口通过返回数据,又因为同源策略是浏览器安全的范畴,所以在node上不用考虑跨域问题.</p>
-<p>2.<br>    项目中只需发一个ajax请求(因为向本地node服务发,故同源,不用考虑跨域).vue中使用axios作为ajax工具,其既可以在浏览器中使用,也可以在node中使用.</p>
+        <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>1 . 在跨域请求(经常是在用到别人的接口时)会遇到一些限制,对方会检查http请求携带的来源,比如检查host,referer等.</p>
+<h2 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h2><p>1 .<br>    我们可以在本地起一个node服务,比如vue开发中的dev-server,使用其发http请求,通过修该请求信息,能够被对方接口通过返回数据,又因为同源策略是浏览器安全的范畴,所以在node上不用考虑跨域问题.</p>
+<p>2 .<br>    项目中只需发一个ajax请求(因为向本地node服务发,故同源,不用考虑跨域).vue中使用axios作为ajax工具,其既可以在浏览器中使用,也可以在node中使用.</p>
 <pre><code>import axios from &apos;axios&apos;,
 let url = &apos;/api/getData&apos;,
 let data = {....},
@@ -435,7 +469,7 @@ axios.get(url, {
 }).then((res) =&gt; {
   ...........................
   })
-</code></pre><p>3.<br>    在本地node服务中对请求’/api/getData’做代理,发请求到实际的接口</p>
+</code></pre><p>3 .<br>    在本地node服务中对请求’/api/getData’做代理,发请求到实际的接口</p>
 <pre><code>var axios = require(&apos;axios&apos;)
 var app = express()
 var apiRoutes = express.Router()
@@ -471,13 +505,28 @@ app.use(&apos;/api&apos;, apiRoutes)
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">-跨域 -代理</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">跨域</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">代理</a>
         		</li>
       		
 		</ul>
 	</div>
 
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/front/" class="article-tag-list-link color1">front</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
@@ -638,6 +687,42 @@ app.use(&apos;/api&apos;, apiRoutes)
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">-跨域 -代理</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">跨域</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">代理</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">jsonp</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">promise</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">异步同步</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AppVeyor</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">持续集成</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">swiper-animal</a>
               </li>
             
             <div class="clearfix"></div>
