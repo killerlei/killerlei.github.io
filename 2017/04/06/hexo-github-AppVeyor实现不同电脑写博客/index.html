@@ -20,7 +20,7 @@
 <meta property="og:image" content="http://oo0zdjapt.bkt.clouddn.com/hexo/images/appveyor-b1.png">
 <meta property="og:image" content="http://oo0zdjapt.bkt.clouddn.com/hexo/images/appveyor-b2.png">
 <meta property="og:image" content="http://oo0zdjapt.bkt.clouddn.com/hexo/images/git-io.png">
-<meta property="og:updated_time" content="2017-10-14T04:22:55.511Z">
+<meta property="og:updated_time" content="2017-10-14T04:40:05.510Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo+github+AppVeyor实现不同电脑写博客">
 <meta name="twitter:description" content="hexo + github 部分 以前一直用的像博客园这样专业的博客网站,但是一直想有个个人站点,正好github提供这样的类似功能,并且发现hexo这样的好工具.hexo使用markdown写文章,并且支持github部署.这就很完美了. 如何使用,网上已有好多教程,不再赘言. 美中不足的是:换了电脑或者电脑坏了,源文件丢失,就得重新写,非常的麻烦. 网上也有很多解决方式,我比较喜欢在githu">
@@ -225,6 +225,10 @@ var _hmt = _hmt || [];
 <p><img src="http://oo0zdjapt.bkt.clouddn.com/hexo/images/git-io.png" alt="">    </p>
 <p>就可以在<a href="https://killerlei.github.io./" target="_blank" rel="external">killerlei.github.io.</a>访问到新建的文章.</p>
 <h4 id="这样是不是很方便-换个电脑直接从源文件仓库clone下来-也不怕丢失"><a href="#这样是不是很方便-换个电脑直接从源文件仓库clone下来-也不怕丢失" class="headerlink" title="这样是不是很方便,换个电脑直接从源文件仓库clone下来,也不怕丢失."></a>这样是不是很方便,换个电脑直接从源文件仓库clone下来,也不怕丢失.</h4><p>ps:如果使用了hexo的非默认主题,可能会遇到这样的情况(比如我用的yilia主题):<br><br>向源文件仓库push时,会失败,我在网上查了以下,好像是主题文件含有.git文件,本来受git控制,所以会冲突.需要删除.git. 我弄了好久才糊里糊涂弄好.如需帮助,请看<a href="http://memory.blog.51cto.com/6054201/1217107" target="_blank" rel="external">.git解决1</a>和<a href="http://bbs.csdn.net/topics/390822726" target="_blank" rel="external">.git解决2</a></p>
+<p>//更新 2017-10-14</p>
+<p>使用持续集成,本地开发预览完整,但是线上会有问题,会遇到文章列表没有,提示 模块缺失,要安装 hexo-generator-json-content.<br>这个问题其实是nodejs 版本低,APPVeyor默认的是version4,要设置builde选项中Platform为x86,并在appveyor.yml中设置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">  nodejs_version: &quot;6&quot;</div><div class="line">  access_token:</div><div class="line">    secure: DO1FA80B0MgslEfR6NntOIORHAtFOrzO70MvNfZK3OIHpXrundrrSBSx+nEkgx9m</div><div class="line"></div><div class="line"></div><div class="line">install:</div><div class="line"> # Get the latest stable version of Node.js or io.js</div><div class="line">  - ps: Install-Product node $env:nodejs_version</div><div class="line">  # install modules</div><div class="line">  - npm install</div><div class="line">  - node --version</div><div class="line">  - npm --version</div><div class="line">  - npm install</div><div class="line">  - npm install hexo-cli -g</div></pre></td></tr></table></figure>
+<p>这样就ok了,会升级nodejs.</p>
 
       
 
