@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>vue开发跨域解决办法 | 雨田</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="跨域是前端开发绕不开的一个话题,尤其在前后端分离的大趋势下,更加变得家常便饭,比如vue本地开发,调用接口,就要跨域. 前面几篇文章,也有所设计跨域相关指示,这里总结一下,前端使用vue开发解决跨域的问题. 1.因为跨域是浏览器的安全策略,在chorme浏览器中,可以在快捷图标中设置 –disable-web-security,非常方便.但是在最新chorme中还要稍加复杂的设置. 2.使用cho">
+  <meta name="description" content="跨域是前端开发绕不开的一个话题,尤其在前后端分离的大趋势下,更加变得家常便饭,比如vue本地开发,调用接口,就要跨域. 前面几篇文章,也有所设计跨域相关指示,这里总结一下,前端使用vue开发解决跨域的问题. 1.因为跨域是浏览器的安全策略,在chorme浏览器中,可以在快捷图标中设置 –disable-web-security,非常方便.但是在最新chorme中还要稍加复杂的设置.">
 <meta name="keywords" content="跨域,代理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue开发跨域解决办法">
 <meta property="og:url" content="http://yoursite.com/2017/10/15/vue开发跨域解决办法/index.html">
 <meta property="og:site_name" content="雨田">
-<meta property="og:description" content="跨域是前端开发绕不开的一个话题,尤其在前后端分离的大趋势下,更加变得家常便饭,比如vue本地开发,调用接口,就要跨域. 前面几篇文章,也有所设计跨域相关指示,这里总结一下,前端使用vue开发解决跨域的问题. 1.因为跨域是浏览器的安全策略,在chorme浏览器中,可以在快捷图标中设置 –disable-web-security,非常方便.但是在最新chorme中还要稍加复杂的设置. 2.使用cho">
-<meta property="og:updated_time" content="2017-10-15T08:44:03.701Z">
+<meta property="og:description" content="跨域是前端开发绕不开的一个话题,尤其在前后端分离的大趋势下,更加变得家常便饭,比如vue本地开发,调用接口,就要跨域. 前面几篇文章,也有所设计跨域相关指示,这里总结一下,前端使用vue开发解决跨域的问题. 1.因为跨域是浏览器的安全策略,在chorme浏览器中,可以在快捷图标中设置 –disable-web-security,非常方便.但是在最新chorme中还要稍加复杂的设置.">
+<meta property="og:updated_time" content="2017-10-15T09:25:21.678Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue开发跨域解决办法">
-<meta name="twitter:description" content="跨域是前端开发绕不开的一个话题,尤其在前后端分离的大趋势下,更加变得家常便饭,比如vue本地开发,调用接口,就要跨域. 前面几篇文章,也有所设计跨域相关指示,这里总结一下,前端使用vue开发解决跨域的问题. 1.因为跨域是浏览器的安全策略,在chorme浏览器中,可以在快捷图标中设置 –disable-web-security,非常方便.但是在最新chorme中还要稍加复杂的设置. 2.使用cho">
+<meta name="twitter:description" content="跨域是前端开发绕不开的一个话题,尤其在前后端分离的大趋势下,更加变得家常便饭,比如vue本地开发,调用接口,就要跨域. 前面几篇文章,也有所设计跨域相关指示,这里总结一下,前端使用vue开发解决跨域的问题. 1.因为跨域是浏览器的安全策略,在chorme浏览器中,可以在快捷图标中设置 –disable-web-security,非常方便.但是在最新chorme中还要稍加复杂的设置.">
   
     <link rel="alternative" href="/atom.xml" title="雨田" type="application/atom+xml">
   
@@ -188,8 +188,7 @@ var _hmt = _hmt || [];
       
         <h1 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h1><p>是前端开发绕不开的一个话题,尤其在前后端分离的大趋势下,更加变得家常便饭,比如vue本地开发,调用接口,就要跨域.</p>
 <p>前面几篇文章,也有所设计跨域相关指示,这里总结一下,前端使用vue开发解决跨域的问题.</p>
-<p>1.因为跨域是浏览器的安全策略,在chorme浏览器中,可以在快捷图标中设置 –disable-web-security,非常方便.但是在最新chorme中还要稍加复杂的设置.</p>
-<p>2.使用chorme插件<a href="https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?utm_source=chrome-app-launcher-info-dialog" target="_blank" rel="external">Allow-Control-Allow-Origin</a>,需要翻墙,实际用起来,效果还不错.偶尔失效.</p>
+<p>1.因为跨域是浏览器的安全策略,在chorme浏览器中,可以在快捷图标中设置 –disable-web-security,非常方便.但是在最新chorme中还要稍加复杂的设置.<br><a id="more"></a><br>2.使用chorme插件<a href="https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?utm_source=chrome-app-launcher-info-dialog" target="_blank" rel="external">Allow-Control-Allow-Origin</a>,需要翻墙,实际用起来,效果还不错.偶尔失效.</p>
 <p>3.使用jsonp ,前面有文章<a href="https://killerlei.github.io./2017/10/05/jsonp%E4%BD%BF%E7%94%A8%E5%8F%8Apromise%E5%B0%81%E8%A3%85/" target="_blank" rel="external">jsonp使用及promise封装</a>.</p>
 <p>4.使用node代理,如<a href="https://killerlei.github.io./2017/10/06/%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%E9%99%90%E5%88%B6/" target="_blank" rel="external">使用代理解决跨域限制</a></p>
 <p>5.使用vue-cli中配置的插件webpack-dev-middleware,实现代理.这要是本文要写的.原理同4,都是使用nodejs做个代理,只是过程不同.</p>
@@ -483,22 +482,6 @@ Object.keys(proxyTable).forEach(function (context) {
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AppVeyor</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">持续集成</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">swiper-animal</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">跨域</a>
               </li>
             
@@ -515,6 +498,18 @@ Object.keys(proxyTable).forEach(function (context) {
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AppVeyor</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">持续集成</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
             
@@ -524,6 +519,10 @@ Object.keys(proxyTable).forEach(function (context) {
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">swiper-animal</a>
               </li>
             
               <li class="article-tag-list-item">

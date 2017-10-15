@@ -188,54 +188,8 @@ var _hmt = _hmt || [];
       
         <h1 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h1><p>是前端开发绕不开的一个话题,尤其在前后端分离的大趋势下,更加变得家常便饭,比如vue本地开发,调用接口,就要跨域.</p>
 <p>前面几篇文章,也有所设计跨域相关指示,这里总结一下,前端使用vue开发解决跨域的问题.</p>
-<p>1.因为跨域是浏览器的安全策略,在chorme浏览器中,可以在快捷图标中设置 –disable-web-security,非常方便.但是在最新chorme中还要稍加复杂的设置.</p>
-<p>2.使用chorme插件<a href="https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?utm_source=chrome-app-launcher-info-dialog" target="_blank" rel="external">Allow-Control-Allow-Origin</a>,需要翻墙,实际用起来,效果还不错.偶尔失效.</p>
-<p>3.使用jsonp ,前面有文章<a href="https://killerlei.github.io./2017/10/05/jsonp%E4%BD%BF%E7%94%A8%E5%8F%8Apromise%E5%B0%81%E8%A3%85/" target="_blank" rel="external">jsonp使用及promise封装</a>.</p>
-<p>4.使用node代理,如<a href="https://killerlei.github.io./2017/10/06/%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%E9%99%90%E5%88%B6/" target="_blank" rel="external">使用代理解决跨域限制</a></p>
-<p>5.使用vue-cli中配置的插件webpack-dev-middleware,实现代理.这要是本文要写的.原理同4,都是使用nodejs做个代理,只是过程不同.</p>
-<p>dev.server.js</p>
-<pre><code>var devMiddleware = require(&apos;webpack-dev-middleware&apos;)(compiler, {
-publicPath: webpackConfig.output.publicPath,
-    stats: {
-        colors: true,
-        chunks: false
-    }
-})
-// proxy api requests
-Object.keys(proxyTable).forEach(function (context) {
-    var options = proxyTable[context]
-    if (typeof options === &apos;string&apos;) {
-        options = { target: options }
-    }
-    app.use(proxyMiddleware(context, options))
-})
-</code></pre><p>config/index.js</p>
-<pre><code>dev: {
-    env: require(&apos;./dev.env&apos;),
-    port: 8081,
-    assetsSubDirectory: &apos;static&apos;,
-    assetsPublicPath: &apos;/&apos;,
-    /*assetsSubDirectory: &apos;/xxxxx&apos;,
-    assetsPublicPath: &apos;&apos;,*/
-    proxyTable: proxyConfig.proxyList,
-    cssSourceMap: false
- }
-</code></pre><p>config/proxyConfig.js</p>
-<pre><code>module.exports = {
-                    proxyList: {
-                            &apos;/apiDev&apos;: {
-                                //真实跨域接口
-                                target: &apos;http://xxxxx.com&apos;,
-                                changeOrigin: true,
-                                pathRewrite: {
-                                    &apos;^/apiDev&apos;: &apos;&apos;
-                                }
-                            }
-                    }
-}
-</code></pre><p>在开发中使用接口如 /apiDev/getAll,会被代理到<a href="http://xxxxx.com/getAll" target="_blank" rel="external">http://xxxxx.com/getAll</a>.</p>
-<p>开发完成后,要上测试或者生产,在换成<a href="http://xxxxx.com/getAll" target="_blank" rel="external">http://xxxxx.com/getAll</a>. 这部分也可以通过配置实现自动切换,以后会写到.</p>
-
+<p>1.因为跨域是浏览器的安全策略,在chorme浏览器中,可以在快捷图标中设置 –disable-web-security,非常方便.但是在最新chorme中还要稍加复杂的设置.<br>
+        
       
 
       
@@ -716,22 +670,6 @@ module.exports = {
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AppVeyor</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">持续集成</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">swiper-animal</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">跨域</a>
               </li>
             
@@ -748,6 +686,18 @@ module.exports = {
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AppVeyor</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">持续集成</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
             
@@ -757,6 +707,10 @@ module.exports = {
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">swiper-animal</a>
               </li>
             
               <li class="article-tag-list-item">
