@@ -166,6 +166,134 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll" style="background:#F8F8FF;">
             
   
+    <article id="post-vue开发跨域解决办法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header" style="background: #B0C4DE">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/15/vue开发跨域解决办法/">vue开发跨域解决办法</a>
+    </h1>
+  
+
+        
+        <a href="/2017/10/15/vue开发跨域解决办法/" class="archive-article-date">
+  	<time datetime="2017-10-15T14:58:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody" style="background: #F8F8FF;">
+      
+        <h1 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h1><p>是前端开发绕不开的一个话题,尤其在前后端分离的大趋势下,更加变得家常便饭,比如vue本地开发,调用接口,就要跨域.</p>
+<p>前面几篇文章,也有所设计跨域相关指示,这里总结一下,前端使用vue开发解决跨域的问题.</p>
+<p>1.因为跨域是浏览器的安全策略,在chorme浏览器中,可以在快捷图标中设置 –disable-web-security,非常方便.但是在最新chorme中还要稍加复杂的设置.</p>
+<p>2.使用chorme插件<a href="https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?utm_source=chrome-app-launcher-info-dialog" target="_blank" rel="external">Allow-Control-Allow-Origin</a>,需要翻墙,实际用起来,效果还不错.偶尔失效.</p>
+<p>3.使用jsonp ,前面有文章<a href="https://killerlei.github.io./2017/10/05/jsonp%E4%BD%BF%E7%94%A8%E5%8F%8Apromise%E5%B0%81%E8%A3%85/" target="_blank" rel="external">jsonp使用及promise封装</a>.</p>
+<p>4.使用node代理,如<a href="https://killerlei.github.io./2017/10/06/%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%E9%99%90%E5%88%B6/" target="_blank" rel="external">使用代理解决跨域限制</a></p>
+<p>5.使用vue-cli中配置的插件webpack-dev-middleware,实现代理.这要是本文要写的.原理同4,都是使用nodejs做个代理,只是过程不同.</p>
+<p>dev.server.js</p>
+<pre><code>var devMiddleware = require(&apos;webpack-dev-middleware&apos;)(compiler, {
+publicPath: webpackConfig.output.publicPath,
+    stats: {
+        colors: true,
+        chunks: false
+    }
+})
+// proxy api requests
+Object.keys(proxyTable).forEach(function (context) {
+    var options = proxyTable[context]
+    if (typeof options === &apos;string&apos;) {
+        options = { target: options }
+    }
+    app.use(proxyMiddleware(context, options))
+})
+</code></pre><p>config/index.js</p>
+<pre><code>dev: {
+    env: require(&apos;./dev.env&apos;),
+    port: 8081,
+    assetsSubDirectory: &apos;static&apos;,
+    assetsPublicPath: &apos;/&apos;,
+    /*assetsSubDirectory: &apos;/xxxxx&apos;,
+    assetsPublicPath: &apos;&apos;,*/
+    proxyTable: proxyConfig.proxyList,
+    cssSourceMap: false
+ }
+</code></pre><p>config/proxyConfig.js</p>
+<pre><code>module.exports = {
+                    proxyList: {
+                            &apos;/apiDev&apos;: {
+                                //真实跨域接口
+                                target: &apos;http://xxxxx.com&apos;,
+                                changeOrigin: true,
+                                pathRewrite: {
+                                    &apos;^/apiDev&apos;: &apos;&apos;
+                                }
+                            }
+                    }
+}
+</code></pre><p>在开发中使用接口如 /apiDev/getAll,会被代理到<a href="http://xxxxx.com/getAll" target="_blank" rel="external">http://xxxxx.com/getAll</a>.</p>
+<p>开发完成后,要上测试或者生产,在换成<a href="http://xxxxx.com/getAll" target="_blank" rel="external">http://xxxxx.com/getAll</a>. 这部分也可以通过配置实现自动切换,以后会写到.</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index" style="background: #778899;margin: 0 auto;">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">跨域</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">代理</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/front/" class="article-tag-list-link color1">front</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/10/15/vue开发跨域解决办法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-vue-cli中process-env-NODE-ENV" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -179,7 +307,7 @@ var _hmt = _hmt || [];
 
         
         <a href="/2017/10/08/vue-cli中process-env-NODE-ENV/" class="archive-article-date">
-  	<time datetime="2017-10-08T09:25:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-08</time>
+  	<time datetime="2017-10-08T17:25:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-08</time>
 </a>
         
       </header>
@@ -213,11 +341,11 @@ output: {
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">vue-cli</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">vue-cli</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -276,7 +404,7 @@ output: {
 
         
         <a href="/2017/10/08/vue-cli编译打包后起node服务测试/" class="archive-article-date">
-  	<time datetime="2017-10-08T06:37:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-08</time>
+  	<time datetime="2017-10-08T14:37:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-08</time>
 </a>
         
       </header>
@@ -301,11 +429,11 @@ output: {
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">vue-cli</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">vue-cli</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -368,7 +496,7 @@ output: {
 
         
         <a href="/2017/10/08/vue-cli-2中webpack的配置分析二/" class="archive-article-date">
-  	<time datetime="2017-10-08T02:44:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-08</time>
+  	<time datetime="2017-10-08T10:44:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-08</time>
 </a>
         
       </header>
@@ -447,11 +575,11 @@ module.exports = {
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">vue-cli</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">vue-cli</a>
         		</li>
       		
 		</ul>
@@ -473,116 +601,6 @@ module.exports = {
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/10/08/vue-cli-2中webpack的配置分析二/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-vue-cli-2-中webpack的配置-一" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header" style="background: #B0C4DE">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/07/vue-cli-2-中webpack的配置-一/">vue-cli(#2)中webpack的配置(一)</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/07/vue-cli-2-中webpack的配置-一/" class="archive-article-date">
-  	<time datetime="2017-10-07T14:39:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody" style="background: #F8F8FF;">
-      
-        <p>这篇基本上转载自滴滴前端团队的一片文章,感谢这样优秀的前端团队.</p>
-<h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><pre><code>.
-├── README.md
-├── build
-│   ├── build.js
-│   ├── check-versions.js
-│   ├── dev-client.js
-│   ├── dev-server.js
-│   ├── utils.js
-│   ├── webpack.base.conf.js
-│   ├── webpack.dev.conf.js
-│   └── webpack.prod.conf.js
-├── config
-│   ├── dev.env.js
-│   ├── index.js
-│   └── prod.env.js
-├── index.html
-├── package.json
-├── src
-│   ├── App.vue
-│   ├── assets
-│   │   └── logo.png
-│   ├── components
-│   │   └── Hello.vue
-│   └── main.js
-└── static
-</code></pre>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index" style="background: #778899;margin: 0 auto;">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">vue-cli</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/front/" class="article-tag-list-link color1">front</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/07/vue-cli-2-中webpack的配置-一/">展开全文 >></a>
         </p>
       
 
@@ -698,22 +716,6 @@ module.exports = {
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">跨域</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">jsonp</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">promise</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">异步同步</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
             
@@ -730,7 +732,19 @@ module.exports = {
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vue-cli</a>
+                <a href="javascript:void(0)" class="js-tag color3">跨域</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">jsonp</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">promise</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">异步同步</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -738,11 +752,15 @@ module.exports = {
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
+                <a href="javascript:void(0)" class="js-tag color3">vue-cli</a>
               </li>
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
               </li>
             
               <li class="article-tag-list-item">

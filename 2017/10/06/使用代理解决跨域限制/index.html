@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>使用代理解决跨域限制 | 雨田</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="问题1 . 在跨域请求(经常是在用到别人的接口时)会遇到一些限制,对方会检查http请求携带的来源,比如检查host,referer等. 代理1 .    我们可以在本地起一个node服务,比如vue开发中的dev-server,使用其发http请求,通过修该请求信息,能够被对方接口通过返回数据,又因为同源策略是浏览器安全的范畴,所以在node上不用考虑跨域问题. 2 .    项目中只需发一个a">
-<meta name="keywords" content="跨域,代理">
+  <meta name="description" content="问题1 . 在跨域请求(经常是在用到别人的接口时)会遇到一些限制,对方会检查http请求携带的来源,比如检查host,referer等. 代理1 .    我们可以在本地起一个node服务,比如vue开发中的dev-server,使用其发http请求,通过修该请求信息,能够被对方接口通过返回数据,又因为同源策略是浏览器安全的范畴,所以在node上不用考虑跨域问题.2 .    项目中只需发一个aj">
+<meta name="keywords" content="跨域,vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用代理解决跨域限制">
 <meta property="og:url" content="http://yoursite.com/2017/10/06/使用代理解决跨域限制/index.html">
 <meta property="og:site_name" content="雨田">
-<meta property="og:description" content="问题1 . 在跨域请求(经常是在用到别人的接口时)会遇到一些限制,对方会检查http请求携带的来源,比如检查host,referer等. 代理1 .    我们可以在本地起一个node服务,比如vue开发中的dev-server,使用其发http请求,通过修该请求信息,能够被对方接口通过返回数据,又因为同源策略是浏览器安全的范畴,所以在node上不用考虑跨域问题. 2 .    项目中只需发一个a">
-<meta property="og:updated_time" content="2017-10-14T03:19:31.387Z">
+<meta property="og:description" content="问题1 . 在跨域请求(经常是在用到别人的接口时)会遇到一些限制,对方会检查http请求携带的来源,比如检查host,referer等. 代理1 .    我们可以在本地起一个node服务,比如vue开发中的dev-server,使用其发http请求,通过修该请求信息,能够被对方接口通过返回数据,又因为同源策略是浏览器安全的范畴,所以在node上不用考虑跨域问题.2 .    项目中只需发一个aj">
+<meta property="og:updated_time" content="2017-10-15T08:44:03.701Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用代理解决跨域限制">
-<meta name="twitter:description" content="问题1 . 在跨域请求(经常是在用到别人的接口时)会遇到一些限制,对方会检查http请求携带的来源,比如检查host,referer等. 代理1 .    我们可以在本地起一个node服务,比如vue开发中的dev-server,使用其发http请求,通过修该请求信息,能够被对方接口通过返回数据,又因为同源策略是浏览器安全的范畴,所以在node上不用考虑跨域问题. 2 .    项目中只需发一个a">
+<meta name="twitter:description" content="问题1 . 在跨域请求(经常是在用到别人的接口时)会遇到一些限制,对方会检查http请求携带的来源,比如检查host,referer等. 代理1 .    我们可以在本地起一个node服务,比如vue开发中的dev-server,使用其发http请求,通过修该请求信息,能够被对方接口通过返回数据,又因为同源策略是浏览器安全的范畴,所以在node上不用考虑跨域问题.2 .    项目中只需发一个aj">
   
     <link rel="alternative" href="/atom.xml" title="雨田" type="application/atom+xml">
   
@@ -179,7 +179,7 @@ var _hmt = _hmt || [];
 
         
         <a href="/2017/10/06/使用代理解决跨域限制/" class="archive-article-date">
-  	<time datetime="2017-10-06T13:00:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-06</time>
+  	<time datetime="2017-10-06T21:00:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-06</time>
 </a>
         
       </header>
@@ -187,8 +187,7 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody" style="background: #F8F8FF;">
       
         <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>1 . 在跨域请求(经常是在用到别人的接口时)会遇到一些限制,对方会检查http请求携带的来源,比如检查host,referer等.</p>
-<h2 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h2><p>1 .<br>    我们可以在本地起一个node服务,比如vue开发中的dev-server,使用其发http请求,通过修该请求信息,能够被对方接口通过返回数据,又因为同源策略是浏览器安全的范畴,所以在node上不用考虑跨域问题.</p>
-<p>2 .<br>    项目中只需发一个ajax请求(因为向本地node服务发,故同源,不用考虑跨域).vue中使用axios作为ajax工具,其既可以在浏览器中使用,也可以在node中使用.</p>
+<h2 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h2><p>1 .<br>    我们可以在本地起一个node服务,比如vue开发中的dev-server,使用其发http请求,通过修该请求信息,能够被对方接口通过返回数据,又因为同源策略是浏览器安全的范畴,所以在node上不用考虑跨域问题.<br>2 .<br>    项目中只需发一个ajax请求(因为向本地node服务发,故同源,不用考虑跨域).vue中使用axios作为ajax工具,其既可以在浏览器中使用,也可以在node中使用.</p>
 <pre><code>import axios from &apos;axios&apos;,
 let url = &apos;/api/getData&apos;,
 let data = {....},
@@ -258,7 +257,7 @@ app.use(&apos;/api&apos;, apiRoutes)
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">代理</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
         		</li>
       		
 		</ul>
@@ -477,22 +476,6 @@ app.use(&apos;/api&apos;, apiRoutes)
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">跨域</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">jsonp</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">promise</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">异步同步</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
             
@@ -509,7 +492,19 @@ app.use(&apos;/api&apos;, apiRoutes)
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vue-cli</a>
+                <a href="javascript:void(0)" class="js-tag color3">跨域</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">jsonp</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">promise</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">异步同步</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -517,11 +512,15 @@ app.use(&apos;/api&apos;, apiRoutes)
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
+                <a href="javascript:void(0)" class="js-tag color3">vue-cli</a>
               </li>
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
               </li>
             
               <li class="article-tag-list-item">
