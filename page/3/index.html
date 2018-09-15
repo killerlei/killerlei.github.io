@@ -14,6 +14,7 @@
 <meta property="og:url" content="http://yoursite.com/page/3/index.html">
 <meta property="og:site_name" content="雨田">
 <meta property="og:description" content="一点点想法,关于工作,关于开发,关于生活,关于自己,关于未来.人生迷茫,道长且艰,奈何伶仃,直至终点.">
+<meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="雨田">
 <meta name="twitter:description" content="一点点想法,关于工作,关于开发,关于生活,关于自己,关于未来.人生迷茫,道长且艰,奈何伶仃,直至终点.">
@@ -49,7 +50,7 @@ var _hmt = _hmt || [];
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
-    <div class="left-col" q-class="show:isShow" style="background:#C3BED4;">
+    <div class="left-col" q-class="show:isShow">
       
 <div class="overlay" style="background: #495A80"></div>
 <div class="intrude-less" >
@@ -169,7 +170,7 @@ var _hmt = _hmt || [];
     <article id="post-使用代理解决跨域限制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header" style="background: #B0C4DE">
+      <header class="article-header" style="background: #272822">
         
   
     <h1 itemprop="name">
@@ -179,12 +180,12 @@ var _hmt = _hmt || [];
 
         
         <a href="/2017/10/06/使用代理解决跨域限制/" class="archive-article-date">
-  	<time datetime="2017-10-06T21:00:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-06</time>
+  	<time datetime="2017-10-06T13:00:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-06</time>
 </a>
         
       </header>
     
-    <div class="article-entry" itemprop="articleBody" style="background: #F8F8FF;">
+    <div class="article-entry" itemprop="articleBody">
       
         <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>1 . 在跨域请求(经常是在用到别人的接口时)会遇到一些限制,对方会检查http请求携带的来源,比如检查host,referer等.</p>
 <h2 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h2><p>1 .<br>    我们可以在本地起一个node服务,比如vue开发中的dev-server,使用其发http请求,通过修该请求信息,能够被对方接口通过返回数据,又因为同源策略是浏览器安全的范畴,所以在node上不用考虑跨域问题.<br>2 .<br>    项目中只需发一个ajax请求(因为向本地node服务发,故同源,不用考虑跨域).vue中使用axios作为ajax工具,其既可以在浏览器中使用,也可以在node中使用.</p>
@@ -224,7 +225,7 @@ app.use(&apos;/api&apos;, apiRoutes)
 
       
     </div>
-    <div class="article-info article-info-index" style="background: #778899;margin: 0 auto;">
+    <div class="article-info article-info-index" style="margin: 0 auto;">
       
       
 	<div class="article-tag tagcloud">
@@ -281,7 +282,7 @@ app.use(&apos;/api&apos;, apiRoutes)
     <article id="post-jsonp使用及promise封装" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header" style="background: #B0C4DE">
+      <header class="article-header" style="background: #272822">
         
   
     <h1 itemprop="name">
@@ -291,14 +292,14 @@ app.use(&apos;/api&apos;, apiRoutes)
 
         
         <a href="/2017/10/05/jsonp使用及promise封装/" class="archive-article-date">
-  	<time datetime="2017-10-05T11:38:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-05</time>
+  	<time datetime="2017-10-05T03:38:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-05</time>
 </a>
         
       </header>
     
-    <div class="article-entry" itemprop="articleBody" style="background: #F8F8FF;">
+    <div class="article-entry" itemprop="articleBody">
       
-        <p>1 .<br><a href="https://github.com/webmodules/jsonp" target="_blank" rel="external">jsonp</a>简单封装了跨域请求方法jsonp,利用script标签不受同源策略的限制,达到ajax的效果.</p>
+        <p>1 .<br><a href="https://github.com/webmodules/jsonp" target="_blank" rel="noopener">jsonp</a>简单封装了跨域请求方法jsonp,利用script标签不受同源策略的限制,达到ajax的效果.</p>
 <p>2 .</p>
 <pre><code>    jsonp(url, opts, fn)
 
@@ -322,7 +323,7 @@ opts 中里面属性都有默认值,可以不用设置,但是注意param是前�
 
       
     </div>
-    <div class="article-info article-info-index" style="background: #778899;margin: 0 auto;">
+    <div class="article-info article-info-index" style="margin: 0 auto;">
       
       
 	<div class="article-tag tagcloud">
@@ -387,7 +388,7 @@ opts 中里面属性都有默认值,可以不用设置,但是注意param是前�
     <article id="post-swiper-animal-冲突解决" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header" style="background: #B0C4DE">
+      <header class="article-header" style="background: #272822">
         
   
     <h1 itemprop="name">
@@ -397,12 +398,12 @@ opts 中里面属性都有默认值,可以不用设置,但是注意param是前�
 
         
         <a href="/2017/04/23/swiper-animal-冲突解决/" class="archive-article-date">
-  	<time datetime="2017-04-23T11:39:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-23</time>
+  	<time datetime="2017-04-23T03:39:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-23</time>
 </a>
         
       </header>
     
-    <div class="article-entry" itemprop="articleBody" style="background: #F8F8FF;">
+    <div class="article-entry" itemprop="articleBody">
       
         <h1 id="冲突"><a href="#冲突" class="headerlink" title="冲突"></a>冲突</h1><ul>
 <li>swiper是个使用广泛，兼容性很高的js插件，可以独立使用，也可以跟jQuery配合使用。</li>
@@ -415,7 +416,7 @@ opts 中里面属性都有默认值,可以不用设置,但是注意param是前�
 
       
     </div>
-    <div class="article-info article-info-index" style="background: #778899;margin: 0 auto;">
+    <div class="article-info article-info-index" style="margin: 0 auto;">
       
       
 	<div class="article-tag tagcloud">
@@ -468,7 +469,7 @@ opts 中里面属性都有默认值,可以不用设置,但是注意param是前�
     <article id="post-hexo-github-AppVeyor实现不同电脑写博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header" style="background: #B0C4DE">
+      <header class="article-header" style="background: #272822">
         
   
     <h1 itemprop="name">
@@ -478,25 +479,25 @@ opts 中里面属性都有默认值,可以不用设置,但是注意param是前�
 
         
         <a href="/2017/04/06/hexo-github-AppVeyor实现不同电脑写博客/" class="archive-article-date">
-  	<time datetime="2017-04-06T17:32:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-06</time>
+  	<time datetime="2017-04-06T09:32:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-06</time>
 </a>
         
       </header>
     
-    <div class="article-entry" itemprop="articleBody" style="background: #F8F8FF;">
+    <div class="article-entry" itemprop="articleBody">
       
         <h2 id="hexo-github-部分"><a href="#hexo-github-部分" class="headerlink" title="hexo + github 部分"></a>hexo + github 部分</h2><ul>
-<li>以前一直用的像<a href="http://www.cnblogs.com/" target="_blank" rel="external">博客园</a>这样专业的博客网站,但是一直想有个个人站点,正好github提供这样的类似功能,并且发现hexo这样的好工具.hexo使用markdown写文章,并且支持github部署.这就很完美了.</li>
+<li>以前一直用的像<a href="http://www.cnblogs.com/" target="_blank" rel="noopener">博客园</a>这样专业的博客网站,但是一直想有个个人站点,正好github提供这样的类似功能,并且发现hexo这样的好工具.hexo使用markdown写文章,并且支持github部署.这就很完美了.</li>
 <li>如何使用,网上已有好多教程,不再赘言.</li>
 <li>美中不足的是:换了电脑或者电脑坏了,源文件丢失,就得重新写,非常的麻烦.</li>
 <li>网上也有很多解决方式,我比较喜欢在github备份源文件,并且使用AppVeyor实现自动部署,不用在本地产生文件,也不用即备份又要部署那么繁琐.</li>
-<li>我是学习这篇教程做的,<a href="https://formulahendry.github.io/2016/12/04/hexo-ci/" target="_blank" rel="external">Hexo的版本控制与持续集成</a>,以下也是我根据其做的实践.
+<li>我是学习这篇教程做的,<a href="https://formulahendry.github.io/2016/12/04/hexo-ci/" target="_blank" rel="noopener">Hexo的版本控制与持续集成</a>,以下也是我根据其做的实践.
         
       
 
       
     </div>
-    <div class="article-info article-info-index" style="background: #778899;margin: 0 auto;">
+    <div class="article-info article-info-index" style="margin: 0 auto;">
       
       
 	<div class="article-tag tagcloud">
@@ -568,7 +569,7 @@ opts 中里面属性都有默认值,可以不用设置,但是注意param是前�
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 雨田
+    		&copy; 2018 雨田
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -649,6 +650,18 @@ opts 中里面属性都有默认值,可以不用设置,但是注意param是前�
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AppVeyor</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">持续集成</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">跨域</a>
               </li>
             
@@ -665,15 +678,7 @@ opts 中里面属性都有默认值,可以不用设置,但是注意param是前�
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AppVeyor</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">持续集成</a>
+                <a href="javascript:void(0)" class="js-tag color4">swiper-animal</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -686,10 +691,6 @@ opts 中里面属性都有默认值,可以不用设置,但是注意param是前�
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">swiper-animal</a>
               </li>
             
               <li class="article-tag-list-item">

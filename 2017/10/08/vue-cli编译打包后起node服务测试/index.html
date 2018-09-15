@@ -15,7 +15,8 @@
 <meta property="og:url" content="http://yoursite.com/2017/10/08/vue-cli编译打包后起node服务测试/index.html">
 <meta property="og:site_name" content="雨田">
 <meta property="og:description" content="使用vue-cli开发项目中,一直使用dev-server.js这个本地服务,实现从内存中读取文件. 项目完成后,要编译打包生成打包文件,提示不能通过打开file//方式访问,需要另外起服务访问. 但是打包好后,不可能立即放到真实服务器中,还需要通过在本地测试一下,故另开一个node服务. 原因因为打包后生成的文件如script/link等路径都是绝对路径,当然找不到了. 解决1 修改配置如果弄明">
-<meta property="og:updated_time" content="2017-10-15T09:25:21.678Z">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-09-14T16:38:30.818Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue-cli编译打包后起node服务测试">
 <meta name="twitter:description" content="使用vue-cli开发项目中,一直使用dev-server.js这个本地服务,实现从内存中读取文件. 项目完成后,要编译打包生成打包文件,提示不能通过打开file//方式访问,需要另外起服务访问. 但是打包好后,不可能立即放到真实服务器中,还需要通过在本地测试一下,故另开一个node服务. 原因因为打包后生成的文件如script/link等路径都是绝对路径,当然找不到了. 解决1 修改配置如果弄明">
@@ -51,7 +52,7 @@ var _hmt = _hmt || [];
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
-    <div class="left-col" q-class="show:isShow" style="background:#C3BED4;">
+    <div class="left-col" q-class="show:isShow">
       
 <div class="overlay" style="background: #495A80"></div>
 <div class="intrude-less" >
@@ -169,7 +170,7 @@ var _hmt = _hmt || [];
             <article id="post-vue-cli编译打包后起node服务测试" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header" style="background: #B0C4DE">
+      <header class="article-header" style="background: #272822">
         
   
     <h1 class="article-title" itemprop="name">
@@ -179,12 +180,12 @@ var _hmt = _hmt || [];
 
         
         <a href="/2017/10/08/vue-cli编译打包后起node服务测试/" class="archive-article-date">
-  	<time datetime="2017-10-08T14:37:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-08</time>
+  	<time datetime="2017-10-08T06:37:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-08</time>
 </a>
         
       </header>
     
-    <div class="article-entry" itemprop="articleBody" style="background: #F8F8FF;">
+    <div class="article-entry" itemprop="articleBody">
       
         <p>使用vue-cli开发项目中,一直使用dev-server.js这个本地服务,实现从内存中读取文件.</p>
 <p>项目完成后,要编译打包生成打包文件,提示不能通过打开file//方式访问,需要另外起服务访问.</p>
@@ -258,7 +259,7 @@ module.exports = app.listen(8081, function (err) {
         </div>
       
     </div>
-    <div class="article-info article-info-index" style="background: #778899;margin: 0 auto;">
+    <div class="article-info article-info-index" style="margin: 0 auto;">
       
       
 	<div class="article-tag tagcloud">
@@ -416,7 +417,7 @@ module.exports = app.listen(8081, function (err) {
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 雨田
+    		&copy; 2018 雨田
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -497,6 +498,18 @@ module.exports = app.listen(8081, function (err) {
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AppVeyor</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">持续集成</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">跨域</a>
               </li>
             
@@ -513,15 +526,7 @@ module.exports = app.listen(8081, function (err) {
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AppVeyor</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">持续集成</a>
+                <a href="javascript:void(0)" class="js-tag color4">swiper-animal</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -534,10 +539,6 @@ module.exports = app.listen(8081, function (err) {
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">swiper-animal</a>
               </li>
             
               <li class="article-tag-list-item">
